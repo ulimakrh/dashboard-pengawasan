@@ -1,0 +1,20 @@
+composer.json (untuk dependensi PHP/Backend):
+php: ^8.2
+laravel/framework: ^12.0
+barryvdh/laravel-dompdf: ^3.1 (untuk fitur pembuatan PDF)
+laravel/tinker: ^2.10.1
+
+package.json (untuk dependensi Node.js/Frontend):
+vite: ^7.0.7
+tailwindcss: ^4.2.4
+@tailwindcss/vite: ^4.2.4
+laravel-vite-plugin: ^2.0.0
+axios: ^1.11.0
+
+Command dashboard-app:
+bash
+# Install dependensi PHP
+composer install
+# Install dependensi Frontend (Node.js)
+npm install
+npm run build

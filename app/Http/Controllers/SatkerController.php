@@ -83,6 +83,7 @@ class SatkerController extends Controller
             ->when($tipe, function ($query, $tipe) {
                 return $query->where('tipe_entitas', $tipe);
             })
+            ->orderBy('nama_entitas', 'asc')
             ->get();
 
         $unassignedSatkers = Satker::whereNull('wilayah_id')->where('is_active', true)->orderBy('nama_entitas')->get();
@@ -144,6 +145,7 @@ class SatkerController extends Controller
                         ->when($statusFilter, function ($query, $statusFilter) {
                             return $query->where('status', $statusFilter);
                         })
+                        ->orderBy('updated_at', 'desc')
                         ->paginate($perPage)
                         ->withQueryString();
 
@@ -157,7 +159,7 @@ class SatkerController extends Controller
             if ($user->isItwil()) {
                 $query->where('wilayah_id', $user->wilayah_id);
             }
-            $satkers = $query->get(); 
+            $satkers = $query->orderBy('nama_entitas', 'asc')->get(); 
         }
 
         return view('satker.show', compact('satker', 'satkers', 'issues'));
