@@ -1,0 +1,211 @@
+nama_entitas;flag;tipe_entitas
+BSDM;1;Dalam Negeri
+ROKEU;1;Dalam Negeri
+KBRI BANDAR SERI BEGAWAN;2;Luar Negeri
+KBRI BANGKOK;2;Luar Negeri
+KBRI BEIJING;2;Luar Negeri
+KBRI CANBERRA;2;Luar Negeri
+KBRI KOLOMBO;2;Luar Negeri
+KBRI DHAKA;2;Luar Negeri
+KBRI HANOI;2;Luar Negeri
+KBRI ISLAMABAD;2;Luar Negeri
+KBRI MANILA;2;Luar Negeri
+KBRI NEW DELHI;2;Luar Negeri
+KBRI PORT MORESBY;2;Luar Negeri
+KBRI PYONGYANG;2;Luar Negeri
+KBRI SEOUL;2;Luar Negeri
+KBRI SINGAPURA;2;Luar Negeri
+KBRI SUVA;2;Luar Negeri
+KBRI TOKYO;2;Luar Negeri
+KBRI WELLINGTON;2;Luar Negeri
+KBRI YANGOON;2;Luar Negeri
+KJRI DAVAO CITY;2;Luar Negeri
+KJRI HO CHI MINH CITY;2;Luar Negeri
+KJRI HONG KONG;2;Luar Negeri
+KJRI JOHOR BAHRU;2;Luar Negeri
+KJRI KARACHI;2;Luar Negeri
+KJRI KOTA KINABALU;2;Luar Negeri
+KJRI MELBOURNE;2;Luar Negeri
+KJRI MUMBAI;2;Luar Negeri
+KJRI NOUMEA;2;Luar Negeri
+KJRI OSAKA;2;Luar Negeri
+KJRI PENANG;2;Luar Negeri
+KJRI SYDNEY;2;Luar Negeri
+KRI DARWIN;2;Luar Negeri
+KJRI PERTH;2;Luar Negeri
+KRI SONGKHLA;2;Luar Negeri
+KRI VANIMO;2;Luar Negeri
+KBRI BOGOTA;2;Luar Negeri
+KBRI BRASILIA;2;Luar Negeri
+KBRI BUENOS AIRES;2;Luar Negeri
+KBRI CARACAS;2;Luar Negeri
+KBRI HAVANA;2;Luar Negeri
+KBRI LIMA;2;Luar Negeri
+KBRI MEXICO CITY;2;Luar Negeri
+KBRI OTTAWA;2;Luar Negeri
+KBRI PARAMARIBO;2;Luar Negeri
+KBRI SANTIAGO;2;Luar Negeri
+KBRI WASHINGTON DC;2;Luar Negeri
+KJRI CHICAGO;2;Luar Negeri
+KJRI HOUSTON;2;Luar Negeri
+KJRI NEW YORK;2;Luar Negeri
+KJRI SAN FRANCISCO;2;Luar Negeri
+KJRI TORONTO;2;Luar Negeri
+KJRI VANCOUVER;2;Luar Negeri
+PTRI NEW YORK;2;Luar Negeri
+KBRI ABU DHABI;2;Luar Negeri
+KBRI ADDIS ABABA;2;Luar Negeri
+KBRI ALGER;2;Luar Negeri
+KBRI AMMAN;2;Luar Negeri
+KBRI ANKARA;2;Luar Negeri
+KBRI ANTANANARIVO;2;Luar Negeri
+KBRI BAGHDAD;2;Luar Negeri
+KBRI BEIRUT;2;Luar Negeri
+KBRI DAKAR;2;Luar Negeri
+KBRI DAMASKUS;2;Luar Negeri
+KBRI DAR-ES-SALAAM;2;Luar Negeri
+KBRI DOHA;2;Luar Negeri
+KBRI HARARE;2;Luar Negeri
+KBRI KAIRO;2;Luar Negeri
+KBRI KHARTOUM;2;Luar Negeri
+KBRI KUWAIT CITY;2;Luar Negeri
+KBRI ABUJA;2;Luar Negeri
+KBRI NAIROBI;2;Luar Negeri
+KBRI PRETORIA;2;Luar Negeri
+KBRI RABAT;2;Luar Negeri
+KBRI RIYADH;2;Luar Negeri
+KBRI SANAA;2;Luar Negeri
+KBRI TEHRAN;2;Luar Negeri
+KBRI TUNIS;2;Luar Negeri
+KJRI CAPE TOWN;2;Luar Negeri
+KJRI JEDDAH;2;Luar Negeri
+KBRI ATHENA;2;Luar Negeri
+KBRI BEOGRAD;2;Luar Negeri
+KBRI BERLIN;2;Luar Negeri
+KBRI BERN;2;Luar Negeri
+KBRI BRATISLAVA;2;Luar Negeri
+KBRI BRUSSEL;2;Luar Negeri
+KBRI BUCHAREST;2;Luar Negeri
+KBRI BUDAPEST;2;Luar Negeri
+KBRI DEN HAAG;2;Luar Negeri
+KBRI HELSINKI;2;Luar Negeri
+KBRI KOPENHAGEN;2;Luar Negeri
+KBRI KYIV;2;Luar Negeri
+KBRI LISABON;2;Luar Negeri
+KBRI LONDON;2;Luar Negeri
+KBRI MADRID;2;Luar Negeri
+KBRI MOSKOW;2;Luar Negeri
+KBRI OSLO;2;Luar Negeri
+KBRI PARIS;2;Luar Negeri
+KBRI PRAHA;2;Luar Negeri
+KBRI ROMA;2;Luar Negeri
+KBRI SOFIA;2;Luar Negeri
+KBRI STOCKHOLM;2;Luar Negeri
+KBRI VATIKAN;2;Luar Negeri
+KBRI WARSAWA;2;Luar Negeri
+KJRI FRANKFURT;2;Luar Negeri
+KJRI HAMBURG;2;Luar Negeri
+KJRI MARSEILLE;2;Luar Negeri
+PTRI JENEWA;2;Luar Negeri
+KBRI WINA;2;Luar Negeri
+KBRI DILI;2;Luar Negeri
+KBRI KUALA LUMPUR;2;Luar Negeri
+KBRI PHNOM PENH;2;Luar Negeri
+KBRI VIENTIANE;2;Luar Negeri
+KBRI WINDHOEK;2;Luar Negeri
+KBRI TRIPOLI;2;Luar Negeri
+KJRI LOS ANGELES;2;Luar Negeri
+KJRI GUANGZHOU;2;Luar Negeri
+KJRI DUBAI;2;Luar Negeri
+KJRI SHANGHAI;2;Luar Negeri
+KJRI KUCHING;2;Luar Negeri
+KBRI KABUL;2;Luar Negeri
+PTRI ASEAN;2;Luar Negeri
+KBRI MANAMA;2;Luar Negeri
+KBRI MUSCAT;2;Luar Negeri
+KBRI MAPUTO;2;Luar Negeri
+KBRI PANAMA CITY;2;Luar Negeri
+KBRI QUITO;2;Luar Negeri
+KBRI SARAJEVO;2;Luar Negeri
+KBRI ZAGREB;2;Luar Negeri
+KRI TAWAU;2;Luar Negeri
+KJRI ISTANBUL;2;Luar Negeri
+KBRI ASTANA;2;Luar Negeri
+KBRI BAKU;2;Luar Negeri
+KBRI TASHKENT;2;Luar Negeri
+KBRI YAOUNDE;2;Luar Negeri
+SETJEN;1;Dalam Negeri
+BDSP;1;Dalam Negeri
+BAKP;1;Dalam Negeri
+BPO;1;Dalam Negeri
+ROKUM;1;Dalam Negeri
+BUP;1;Dalam Negeri
+PUSDIKLAT;1;Dalam Negeri
+PUSDATIN;1;Dalam Negeri
+PUSBINJABFUNG;1;Dalam Negeri
+UPT SEKDILU;1;Dalam Negeri
+UPT SESDILU;1;Dalam Negeri
+UPT SESPARLU;1;Dalam Negeri
+DITJEN ASPASAF;1;Dalam Negeri
+SET DITJEN ASPASAF;1;Dalam Negeri
+DIT ASTARA;1;Dalam Negeri
+DIT ASTIM;1;Dalam Negeri
+DIT PASOS;1;Dalam Negeri
+DIT ASSELTENG;1;Dalam Negeri
+DIT TIMTENG;1;Dalam Negeri
+DIT AFRIKA;1;Dalam Negeri
+DIT KSIA ASPASAF;1;Dalam Negeri
+DITJEN AMEROP;1;Dalam Negeri
+SET DITJEN AMEROP;1;Dalam Negeri
+DIT AMERIKA I;1;Dalam Negeri
+DIT AMERIKA II;1;Dalam Negeri
+DIT EROPA I;1;Dalam Negeri
+DIT EROPA II;1;Dalam Negeri
+DIT KSIA AMEROP;1;Dalam Negeri
+DITJEN KS ASEAN;1;Dalam Negeri
+SET DITJEN KS ASEAN;1;Dalam Negeri
+DIT KS POLKAM ASEAN;1;Dalam Negeri
+DIT KS EKONOMI ASEAN;1;Dalam Negeri
+DIT KS SOSBUD ASEAN;1;Dalam Negeri
+DIT KS EKSTERNAL ASEAN;1;Dalam Negeri
+DITJEN KS MULTILATERAL;1;Dalam Negeri
+SET DITJEN KS MULTILATERAL;1;Dalam Negeri
+DIT KP INTERNASIONAL;1;Dalam Negeri
+DIT HAM DAN MIGRASI;1;Dalam Negeri
+DIT PELH;1;Dalam Negeri
+DIT SOSBUD DAN KEMSTRA;1;Dalam Negeri
+DITJEN HPI;1;Dalam Negeri
+SET DITJEN HPI;1;Dalam Negeri
+DIT HPK;1;Dalam Negeri
+DIT HPE;1;Dalam Negeri
+DIT HP SOSBUD;1;Dalam Negeri
+DIT HP POLKAM;1;Dalam Negeri
+DITJEN HEKSP;1;Dalam Negeri
+SET DITJEN HEKSP;1;Dalam Negeri
+DIT PI;1;Dalam Negeri
+DIT INKRAF;1;Dalam Negeri
+DIT SDI;1;Dalam Negeri
+DIT KSPI;1;Dalam Negeri
+DITJEN IDP;1;Dalam Negeri
+SET DITJEN IDP;1;Dalam Negeri
+DIT INFOMED;1;Dalam Negeri
+DIT DIPLIK;1;Dalam Negeri
+DIT UPORA;1;Dalam Negeri
+DITJEN PROTKONS;1;Dalam Negeri
+SET DITJEN PROTKONS;1;Dalam Negeri
+DIT PROTOKOL;1;Dalam Negeri
+DIT KONSULER;1;Dalam Negeri
+DIT FASDIP;1;Dalam Negeri
+DIT PWNI;1;Dalam Negeri
+ITJEN;1;Dalam Negeri
+SET ITJEN;1;Dalam Negeri
+ITWIL I;1;Dalam Negeri
+ITWIL II;1;Dalam Negeri
+ITWIL III;1;Dalam Negeri
+ITWIL IV;1;Dalam Negeri
+BSKLN;1;Dalam Negeri
+SET BSKLN;1;Dalam Negeri
+PUSAT SKK ASPASAF;1;Dalam Negeri
+PUSAT SKK AMEROP;1;Dalam Negeri
+PUSAT SK MULTILATERAL;1;Dalam Negeri
+PUSAT SK IKAD;1;Dalam Negeri
