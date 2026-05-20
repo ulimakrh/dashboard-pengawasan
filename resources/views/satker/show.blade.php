@@ -352,8 +352,14 @@
             @if($issues->total() > 0)
             <div class="p-4 md:p-5 bg-[#172033] flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-[#232d3f]">
                 <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-start">
-                    <div class="text-slate-400 text-xs">
-                        <span class="hidden sm:inline">Menampilkan</span> {{ $issues->firstItem() }}-{{ $issues->lastItem() }} <span class="hidden sm:inline">dari {{ $issues->total() }} isu</span>
+                    <div class="text-slate-400 text-xs flex items-center gap-3">
+                        <span><span class="hidden sm:inline">Menampilkan</span> {{ $issues->firstItem() }}-{{ $issues->lastItem() }} <span class="hidden sm:inline">dari {{ $issues->total() }} isu</span></span>
+                        
+                        <select onchange="window.location.href=this.value" class="bg-[#232d3f] border border-[#2d3748] text-slate-300 text-xs rounded px-2 py-1 outline-none focus:border-indigo-500 transition cursor-pointer">
+                            <option value="{{ request()->fullUrlWithQuery(['per_page' => 5, 'page' => 1]) }}" {{ request('per_page', 5) == 5 ? 'selected' : '' }}>5</option>
+                            <option value="{{ request()->fullUrlWithQuery(['per_page' => 10, 'page' => 1]) }}" {{ request('per_page') == 10 ? 'selected' : '' }}>10</option>
+                            <option value="{{ request()->fullUrlWithQuery(['per_page' => 20, 'page' => 1]) }}" {{ request('per_page') == 20 ? 'selected' : '' }}>20</option>
+                        </select>
                     </div>
                 </div>
 
@@ -361,7 +367,7 @@
                     @if ($issues->onFirstPage())
                         <span class="py-1 px-3 bg-transparent text-slate-500 border border-[#2d3748] rounded cursor-not-allowed text-xs font-semibold">Prev</span>
                     @else
-                        <a href="{{ $issues->previousPageUrl() }}&status={{ request('status') }}" class="py-1 px-3 bg-transparent text-slate-400 border border-[#2d3748] rounded no-underline text-xs hover:bg-[#202b3d] hover:text-white transition-colors font-semibold">Prev</a>
+                        <a href="{{ $issues->previousPageUrl() }}" class="py-1 px-3 bg-transparent text-slate-400 border border-[#2d3748] rounded no-underline text-xs hover:bg-[#202b3d] hover:text-white transition-colors font-semibold">Prev</a>
                     @endif
 
                     <span class="py-1 px-3 bg-indigo-600 text-white rounded text-xs font-bold shadow-md shadow-indigo-500/20">
@@ -369,7 +375,7 @@
                     </span>
 
                     @if ($issues->hasMorePages())
-                        <a href="{{ $issues->nextPageUrl() }}&status={{ request('status') }}" class="py-1 px-3 bg-transparent text-slate-400 border border-[#2d3748] rounded no-underline text-xs hover:bg-[#202b3d] hover:text-white transition-colors font-semibold">Next</a>
+                        <a href="{{ $issues->nextPageUrl() }}" class="py-1 px-3 bg-transparent text-slate-400 border border-[#2d3748] rounded no-underline text-xs hover:bg-[#202b3d] hover:text-white transition-colors font-semibold">Next</a>
                     @else
                         <span class="py-1 px-3 bg-transparent text-slate-500 border border-[#2d3748] rounded cursor-not-allowed text-xs font-semibold">Next</span>
                     @endif
