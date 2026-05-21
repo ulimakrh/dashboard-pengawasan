@@ -12,22 +12,6 @@
         </div>
 
         <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
-            <form action="/satker" method="GET" class="relative flex-1 md:flex-none">
-                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
-                    <span class="text-[10px]">🔍</span>
-                </div>
-                <input type="hidden" name="tipe" value="{{ request('tipe') }}">
-                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari..." 
-                    class="w-full md:w-56 bg-slate-950 border border-slate-800 rounded-lg pl-8 pr-4 text-[11px] text-white placeholder:text-slate-600 focus:border-blue-500 outline-none transition-all h-10 shadow-inner">
-            </form>
-
-            @if(auth()->user()->isSuperAdmin())
-            <button type="button" onclick="document.getElementById('modalTambah').classList.remove('hidden')" 
-                class="bg-blue-600 hover:bg-blue-500 text-white px-5 rounded-lg text-[10px] font-extrabold shadow-lg shadow-blue-900/40 transition-all active:scale-95 flex items-center gap-2 shrink-0 h-10 uppercase tracking-widest">
-                <span class="text-lg">+</span> Tambah Entitas
-            </button>
-            @endif
-
             @if(auth()->user()->isItwil())
             <form action="{{ route('satker.claim') }}" method="POST" class="relative flex-1 md:flex-none flex gap-2">
                 @csrf
@@ -48,6 +32,21 @@
             </form>
             @endif
 
+            @if(auth()->user()->isSuperAdmin())
+            <a href="{{ route('users.index') }}" 
+                class="bg-purple-600 hover:bg-purple-500 text-white px-5 rounded-lg text-[10px] font-extrabold shadow-lg shadow-purple-900/40 transition-all active:scale-95 flex items-center gap-2 shrink-0 h-10 uppercase tracking-widest">
+                Kelola User
+            </a>
+            <button type="button" onclick="document.getElementById('modalTambahUser').classList.remove('hidden')" 
+                class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 rounded-lg text-[10px] font-extrabold shadow-lg shadow-indigo-900/40 transition-all active:scale-95 flex items-center gap-2 shrink-0 h-10 uppercase tracking-widest">
+                <span class="text-lg">+</span> Tambah User
+            </button>
+            <button type="button" onclick="document.getElementById('modalTambah').classList.remove('hidden')" 
+                class="bg-blue-600 hover:bg-blue-500 text-white px-5 rounded-lg text-[10px] font-extrabold shadow-lg shadow-blue-900/40 transition-all active:scale-95 flex items-center gap-2 shrink-0 h-10 uppercase tracking-widest">
+                <span class="text-lg">+</span> Tambah Entitas
+            </button>
+            @endif
+
             <form id="formLogout" action="{{ route('logout') }}" method="POST" class="m-0">
                 @csrf
                 <button type="button" onclick="document.getElementById('modalLogout').classList.remove('hidden')" class="bg-[#1b2537] hover:bg-[#232d3f] text-slate-300 hover:text-white border border-[#2d3748] px-4 rounded-lg text-[10px] font-extrabold shadow-sm transition-all active:scale-95 flex items-center gap-2 shrink-0 h-10 uppercase tracking-widest">
@@ -58,22 +57,33 @@
         </div>
     </div>
 
-    <div class="flex items-center gap-1.5 mb-10 bg-slate-900/40 p-1 rounded-xl w-fit border border-slate-800/50 backdrop-blur-md">
-        @php
-            $filters = [
-                '' => 'Semua',
-                'Luar Negeri' => 'Luar Negeri',
-                'Dalam Negeri' => 'Dalam Negeri'
-            ];
-            $currentTipe = request('tipe', '');
-        @endphp
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+        <div class="flex items-center gap-1.5 bg-slate-900/40 p-1 rounded-xl w-fit border border-slate-800/50 backdrop-blur-md">
+            @php
+                $filters = [
+                    '' => 'Semua',
+                    'Luar Negeri' => 'Luar Negeri',
+                    'Dalam Negeri' => 'Dalam Negeri'
+                ];
+                $currentTipe = request('tipe', '');
+            @endphp
 
-        @foreach($filters as $value => $label)
-            <a href="{{ request()->fullUrlWithQuery(['tipe' => $value]) }}" 
-               class="px-4 py-1.5 rounded-lg text-[9px] uppercase tracking-[0.15em] font-bold transition-all {{ $currentTipe == $value ? 'bg-slate-700 text-blue-400 shadow-md ring-1 ring-slate-600' : 'text-slate-500 hover:text-slate-300' }}">
-               {{ $label }}
-            </a>
-        @endforeach
+            @foreach($filters as $value => $label)
+                <a href="{{ request()->fullUrlWithQuery(['tipe' => $value]) }}" 
+                   class="px-4 py-1.5 rounded-lg text-[9px] uppercase tracking-[0.15em] font-bold transition-all {{ $currentTipe == $value ? 'bg-slate-700 text-blue-400 shadow-md ring-1 ring-slate-600' : 'text-slate-500 hover:text-slate-300' }}">
+                   {{ $label }}
+                </a>
+            @endforeach
+        </div>
+
+        <form action="/satker" method="GET" class="relative w-full md:w-auto">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+                <span class="text-[10px]">🔍</span>
+            </div>
+            <input type="hidden" name="tipe" value="{{ request('tipe') }}">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari..." 
+                class="w-full md:w-64 bg-white border border-slate-300 rounded-lg pl-8 pr-4 text-[11px] text-slate-900 placeholder:text-slate-500 focus:border-blue-500 outline-none transition-all h-10 shadow-sm">
+        </form>
     </div>
 
     @if(request('search'))
@@ -196,6 +206,85 @@
             </form>
         </div>
     </div>
+    <!-- Modal Tambah User -->
+    <div id="modalTambahUser" class="hidden fixed inset-0 z-[999] flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4">
+        <div class="bg-[#1e293b] w-full max-w-md p-8 md:p-10 rounded-[2.5rem] border border-slate-800 shadow-2xl">
+            <h3 class="text-xl font-black text-indigo-500 mb-8 uppercase tracking-[0.2em]">Tambah User</h3>
+            
+            <form action="{{ route('users.store') }}" method="POST" class="space-y-6">
+                @csrf
+                <div>
+                    <label class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Jenis Role</label>
+                    <div class="relative">
+                        <select name="role" required id="roleSelectDashboard"
+                            onchange="this.classList.remove('text-slate-500'); this.classList.add('text-white'); document.getElementById('satkerWrapperDashboard').classList.toggle('hidden', this.value !== 'satker'); document.getElementById('itwilWrapperDashboard').classList.toggle('hidden', this.value !== 'itwil');"
+                            class="w-full bg-[#0f172a] border border-slate-700 rounded-xl px-4 py-3 text-[11px] text-slate-500 outline-none focus:border-indigo-500 transition cursor-pointer appearance-none">
+                            <option value="" disabled selected>Pilih Role</option>
+                            <option value="super_admin" class="text-white bg-[#1e293b]">Super Admin</option>
+                            <option value="manager" class="text-white bg-[#1e293b]">Manager</option>
+                            <option value="itwil" class="text-white bg-[#1e293b]">Itwil</option>
+                            <option value="satker" class="text-white bg-[#1e293b]">Satker</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="satkerWrapperDashboard" class="hidden">
+                    <label class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Nama Satker</label>
+                    <div class="relative">
+                        <select name="satker_id"
+                            class="select2-searchable w-full bg-[#0f172a] border border-slate-700 rounded-xl px-4 py-3 text-[11px] text-white outline-none focus:border-indigo-500 transition cursor-pointer">
+                            <option value="" disabled selected>Pilih Satker</option>
+                            @foreach(\App\Models\Satker::orderBy('nama_entitas')->get() as $satker)
+                                <option value="{{ $satker->id }}" class="bg-[#1e293b]">{{ $satker->nama_entitas }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div id="itwilWrapperDashboard" class="hidden">
+                    <label class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Wilayah Itwil</label>
+                    <div class="relative">
+                        <select name="wilayah_id"
+                            class="w-full bg-[#0f172a] border border-slate-700 rounded-xl px-4 py-3 text-[11px] text-white outline-none focus:border-indigo-500 transition cursor-pointer appearance-none">
+                            <option value="" disabled selected>Pilih Itwil</option>
+                            <option value="Itwil I" class="bg-[#1e293b]">Itwil I</option>
+                            <option value="Itwil II" class="bg-[#1e293b]">Itwil II</option>
+                            <option value="Itwil III" class="bg-[#1e293b]">Itwil III</option>
+                            <option value="Itwil IV" class="bg-[#1e293b]">Itwil IV</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Email</label>
+                    <input type="email" name="email" placeholder="Email" required
+                        class="w-full bg-[#0f172a] border border-slate-700 rounded-xl px-4 py-3 text-[11px] text-white placeholder:text-slate-600 outline-none focus:border-indigo-500 transition">
+                </div>
+
+                <div>
+                    <label class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mb-2 block">Password</label>
+                    <input type="password" name="password" placeholder="Password" required minlength="8"
+                        class="w-full bg-[#0f172a] border border-slate-700 rounded-xl px-4 py-3 text-[11px] text-white placeholder:text-slate-600 outline-none focus:border-indigo-500 transition">
+                </div>
+
+                <div class="flex justify-end items-center gap-6 mt-10">
+                    <button type="button" onclick="document.getElementById('modalTambahUser').classList.add('hidden')" 
+                        class="text-[10px] text-slate-400 hover:text-white font-black transition uppercase tracking-widest">Batal</button>
+                    <button type="submit" 
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl text-[10px] font-black shadow-lg shadow-indigo-900/40 transition-all active:scale-95 uppercase tracking-widest">
+                        Simpan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Modal Konfirmasi Logout -->
     <div id="modalLogout" class="hidden fixed inset-0 z-[999] flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 transition-opacity">
         <div class="bg-[#1e293b] w-full max-w-sm rounded-[2rem] border border-slate-700 shadow-2xl p-8 text-center relative overflow-hidden">

@@ -57,6 +57,12 @@
         }
         .btn-submit:hover { background: #1d4ed8; }
         
+        .readonly-field {
+            opacity: 0.6;
+            cursor: not-allowed !important;
+            background-color: #1e293b !important;
+        }
+        
         @media (max-width: 768px) {
             .grid-container { flex-direction: column; }
         }
@@ -131,25 +137,33 @@
         <!-- SEKSI KANAN: SNAPSHOT PENGAWASAN -->
         <div class="card">
             <h3>Snapshot Pengawasan</h3>
+            
+            @if(auth()->user()->isSatker())
+            <div style="background: #334155; padding: 12px; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 20px;">
+                <p style="font-size: 0.8rem; color: #cbd5e1; margin: 0;">
+                    <strong style="color: #fcd34d;">Info:</strong> Satker hanya memiliki izin untuk mengedit Profil & Kontak. Data Snapshot Pengawasan hanya dapat diperbarui oleh Super Admin atau Itwil.
+                </p>
+            </div>
+            @endif
 
             <div class="form-group">
                 <label>Tahun Audit Terakhir</label>
-                <input type="text" name="tahun_audit" value="{{ $satker->profile->tahun_audit ?? '' }}" placeholder="Contoh: 2023">
+                <input type="text" name="tahun_audit" value="{{ $satker->profile->tahun_audit ?? '' }}" placeholder="Contoh: 2023" {!! auth()->user()->isSatker() ? 'readonly class="readonly-field"' : '' !!}>
             </div>
 
             <div class="form-group">
                 <label>Status RR/RPR</label>
-                <input type="text" name="status_rr" value="{{ $satker->profile->status_rr ?? '' }}" placeholder="Masukkan status penyelesaian">
+                <input type="text" name="status_rr" value="{{ $satker->profile->status_rr ?? '' }}" placeholder="Masukkan status penyelesaian" {!! auth()->user()->isSatker() ? 'readonly class="readonly-field"' : '' !!}>
             </div>
 
             <div class="form-group">
                 <label>Area Risiko Utama</label>
-                <textarea name="area_resiko" rows="3" placeholder="Sebutkan area risiko utama">{{ $satker->profile->area_resiko ?? '' }}</textarea>
+                <textarea name="area_resiko" rows="3" placeholder="Sebutkan area risiko utama" {!! auth()->user()->isSatker() ? 'readonly class="readonly-field"' : '' !!}>{{ $satker->profile->area_resiko ?? '' }}</textarea>
             </div>
 
             <div class="form-group">
                 <label>Indikasi Temuan Berulang</label>
-                <textarea name="temuan" rows="3" placeholder="Deskripsi indikasi temuan">{{ $satker->profile->temuan ?? '' }}</textarea>
+                <textarea name="temuan" rows="3" placeholder="Deskripsi indikasi temuan" {!! auth()->user()->isSatker() ? 'readonly class="readonly-field"' : '' !!}>{{ $satker->profile->temuan ?? '' }}</textarea>
             </div>
             
             {{-- <div style="background: #0f172a; padding: 15px; border-radius: 12px; border-left: 4px solid #3b82f6; margin-top: 10px;">

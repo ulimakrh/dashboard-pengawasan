@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SatkerController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 // Rute Public (Hanya bisa diakses jika belum login)
 Route::middleware('guest')->group(function () {
@@ -41,4 +42,12 @@ Route::middleware('auth')->group(function () {
 
     Route::patch('/issue/{id}', [SatkerController::class, 'updateIssue']);
     Route::patch('/issue/{id}/status', [SatkerController::class, 'updateIssueStatus']);
+
+    // Manajemen User (Khusus Superadmin)
+    Route::prefix('users')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::post('/', [UserController::class, 'store'])->name('users.store');
+        Route::put('/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
 });

@@ -215,11 +215,14 @@ class SatkerController extends Controller
             'ppk_telp'    => $request->ppk_telp,
             'bpkrt_nama'  => $request->bpkrt_nama,
             'bpkrt_telp'  => $request->bpkrt_telp,
-            'tahun_audit' => $request->tahun_audit,
-            'status_rr'   => $request->status_rr,
-            'area_resiko' => $request->area_resiko,
-            'temuan'      => $request->temuan,
         ];
+
+        if (!auth()->user()->isSatker()) {
+            $dataProfile['tahun_audit'] = $request->tahun_audit;
+            $dataProfile['status_rr']   = $request->status_rr;
+            $dataProfile['area_resiko'] = $request->area_resiko;
+            $dataProfile['temuan']      = $request->temuan;
+        }
 
         Profile::updateOrCreate(['satker_id' => $satker->id], $dataProfile);
 
